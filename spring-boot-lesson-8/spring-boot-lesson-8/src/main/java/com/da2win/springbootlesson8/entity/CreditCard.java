@@ -20,7 +20,7 @@ public class CreditCard {
     @Column(name = "reg_date")
     private Date registeredDate;
 
-    @OneToOne(mappedBy = "creditCard", cascade = CascadeType.REMOVE)
+    @OneToOne(mappedBy = "creditCard")
     private Customer customer;
 
     public Long getId() {
