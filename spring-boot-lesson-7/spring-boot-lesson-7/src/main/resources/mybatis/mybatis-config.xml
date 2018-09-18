@@ -30,6 +30,8 @@
 
     <mappers>
         <mapper resource="mybatis/mappers/UserMapper.xml"/>
+        <!--<mapper class="com.da2win.springbootlesson7.annotation.UserMapper"/>-->
+        <!--<mapper class="com.da2win.springbootlesson7.mapper2.UserMapper"/>-->
     </mappers>
 
 </configuration>

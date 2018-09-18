@@ -32,7 +32,7 @@ public class MybatisXmlConfigurationDemo {
 
         SqlSession sqlSession = sessionFactory.openSession();
 
-        User user= sqlSession.selectOne("com.da2win.springbootlesson7.mapper.UserMapper.selectOne", 3);
+        User user= sqlSession.selectOne("com.da2win.springbootlesson7.mapper2.UserMapper.selectByPrimaryKey", 3);
 
         System.out.println(user);
 
