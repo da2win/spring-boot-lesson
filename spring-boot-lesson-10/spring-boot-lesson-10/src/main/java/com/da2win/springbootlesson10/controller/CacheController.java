@@ -1,12 +1,10 @@
 package com.da2win.springbootlesson10.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,9 +15,10 @@ import java.util.Map;
 public class CacheController {
 
     @Autowired
+    @Qualifier("simpleCacheManager")
     private CacheManager cacheManager;
 
-    @GetMapping("/save")
+    @PostMapping("/save")
     public Map<String, Object> save(@RequestParam String key, @RequestParam String value) {
         Cache cache = cacheManager.getCache("cache-1");
 
