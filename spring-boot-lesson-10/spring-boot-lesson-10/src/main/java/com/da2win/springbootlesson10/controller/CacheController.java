@@ -16,7 +16,7 @@ public class CacheController {
 
     @Autowired
     @Qualifier("simpleCacheManager")
-    private CacheManager cacheManager;
+        private CacheManager cacheManager;
 
     @PostMapping("/save")
     public Map<String, Object> save(@RequestParam String key, @RequestParam String value) {
