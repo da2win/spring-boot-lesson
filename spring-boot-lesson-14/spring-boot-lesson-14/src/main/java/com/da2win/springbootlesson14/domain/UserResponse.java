@@ -87,4 +87,11 @@ public class UserResponse {
         this.timestamp = value;
     }
 
+    @Override
+    public String toString() {
+        return "UserResponse{" +
+                "user=" + user +
+                ", timestamp=" + timestamp +
+                '}';
+    }
 }

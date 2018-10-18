@@ -11,6 +11,8 @@ import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
 import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
 /**
  * 用户服务Endpoint
@@ -26,7 +28,9 @@ public class UserServiceEndpoint {
     public UserResponse getUser(@RequestPayload UserIdRequest request) {
         long userId = request.getUserId();
 
-        System.out.println("Web Services 请求的时间 : " + Instant.ofEpochMilli(userId));
+        Instant instant = Instant.ofEpochMilli(request.getTimestamp());
+        ZonedDateTime zonedDateTime = instant.atZone(ZoneId.systemDefault());
+        System.out.println("Web Services 用户 ID : " + userId + ",请求的时间 : " + zonedDateTime);
 
         User user = userRepository.findById(userId);
 
