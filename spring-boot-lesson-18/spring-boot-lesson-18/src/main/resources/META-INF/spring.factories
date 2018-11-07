@@ -1,0 +1,5 @@
+
+
+## ×Ô¶¨Òå Spring Boot ApplicationListener
+org.springframework.context.ApplicationListener=\
+com.da2win.springbootlesson18.context.CustomizedSpringBootAplicationListener

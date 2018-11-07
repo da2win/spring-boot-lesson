@@ -2,12 +2,14 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd" profile="prod">
 
     <bean id="person" class="com.da2win.springbootlesson18.domain.Person">
-        <property name="id" value="${person.id}"/>
-        <property name="name" value="darwin"/>
-        <property name="age" value="${person.age}"/>
+        <property name="id" value="4"/>
+        <property name="name" value="Fabregas"/>
+        <property name="age" value="31"/>
     </bean>
+
+
 
 </beans>

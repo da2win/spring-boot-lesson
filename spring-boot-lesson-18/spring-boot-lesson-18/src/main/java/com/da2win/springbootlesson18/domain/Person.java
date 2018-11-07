@@ -1,9 +1,12 @@
 package com.da2win.springbootlesson18.domain;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
+
 /**
  * @Author Darwin
  * @Date 2018/11/7 9:03
  */
+@ConfigurationProperties("person")
 public class Person {
 
     private Long id;
