@@ -6,9 +6,11 @@ import com.da2win.springbootlesson19.listener.PersonIntegrationTestListener;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.ContextHierarchy;
 import org.springframework.test.context.TestExecutionListeners;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
 
@@ -27,7 +29,11 @@ import org.springframework.test.context.support.DependencyInjectionTestExecution
 @TestExecutionListeners({
         PersonIntegrationTestListener.class, DependencyInjectionTestExecutionListener.class
 })
+@TestPropertySource(properties = {"name=da2win"})
 public class PersonIntergrationTest {
+
+    @Value("${name}")
+    private String name;
 
     @Autowired
     private Person person;
@@ -49,6 +55,11 @@ public class PersonIntergrationTest {
         Assert.assertEquals(Integer.valueOf(25), person.getAge());
     }
 
+    @Test
+    public void testName() {
+        Assert.assertEquals("da2win", name);
+    }
+
     @After
     public void after() {
         System.out.println("PersonIntergrationTest.after");
@@ -58,4 +69,5 @@ public class PersonIntergrationTest {
     public static void afterClass() {
         System.err.println("PersonIntergrationTest.afterClass");
     }
+
 }
