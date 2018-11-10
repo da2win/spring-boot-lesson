@@ -1,0 +1,2 @@
+org.springframework.test.context.TestExecutionListener = \
+com.da2win.springbootlesson19.listener.PersonIntegrationTestListener
